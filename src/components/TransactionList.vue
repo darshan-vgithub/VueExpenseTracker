@@ -15,6 +15,9 @@
 <script setup>
 import { defineProps  } from "vue";
 
+
+const emit=defineEmits(['transactionDeleted'])
+
 // Define props
 const props = defineProps({
   transactions: {
@@ -22,5 +25,13 @@ const props = defineProps({
     required: true,
   },
 });
+
+
+
+
+const deleteTransaction=(id)=>{
+    emit("transactionDeleted",id)
+
+}
 
 </script>
